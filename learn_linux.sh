@@ -1,6 +1,9 @@
 #!/bin/bash
 # 在Linux学习中需要频繁操作的地方的记录
 
+# yoga14s PC need install 
+# sudo apt install thunderbolt-tools
+
 # essential software
 # sudo apt install emacs vim build-essential git wget gcc gdb g++ htop
 

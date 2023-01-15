@@ -5,7 +5,7 @@
 # sudo apt install thunderbolt-tools
 
 # essential software
-# sudo apt install emacs vim build-essential git wget gcc gdb g++ htop
+# sudo apt install emacs vim build-essential git wget gcc gdb g++ htop minicom
 
 # openssh-server and config 
 # sudo apt install openssh-server

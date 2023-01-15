@@ -253,7 +253,11 @@
 
 ## sudo apt install nfs-kernel-server
 # append below text to /etc/exports
-# /home/debian/dev/nfs *(rw,sync,no_root_squash,no_subtree_check)
+# cat << EOF >> /etc/exports 
+# /home/aa/dev/nfs *(rw,sync,no_root_squash,no_subtree_check)
+# EOF
+
+
 # sudo /etc/init.d/rpcbind restart
 # sudo /etc/init.d/nfs-kernel-server restart
 
@@ -262,6 +266,8 @@
 # make menuconfig -> network ... -> nfs seting 
 ## 2. Or set host linux nfs setting
 ## append below text to  /etc/default/nfs-kernel-server
-## RPCSVCGSSDOPTS="--nfs-version 2,3,4 --debug --syslog"
+# cat << EOF >> /etc/default/nfs-kernel-server
+# RPCSVCGSSDOPTS="--nfs-version 2,3,4 --debug --syslog"
+# EOF
 
 # tftp 0x60003000 uImage;tftp 0x60800000 vexpress-v2p-ca9.dtb;setenv bootargs 'root=/dev/nfs rw nfsroot=192.168.1.138:/home/nfs,proto=tcp,nfsvers=3,nolock init=/linuxrc ip=192.168.1.137 console=ttyAMA0';bootm 0x60003000 - 0x60800000;

@@ -9,7 +9,7 @@ cd -
 # sudo apt install thunderbolt-tools
 
 # essential software
-sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server
+sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server emacs
 
 # openssh-server and config 
 if [ ! -e  /etc/ssh/sshd_config.bak ] ; then

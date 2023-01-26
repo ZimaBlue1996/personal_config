@@ -1,12 +1,8 @@
 #!/bin/bash
 # 在Linux学习中需要频繁操作的地方的记录
 
-cd ~
-mkdir dev
-cd -
-
 # yoga14s PC need install 
-# sudo apt install thunderbolt-tools mpv
+# sudo apt install thunderbolt-tools mpv fcitx5 fcitx5-chinese-addons
 
 # essential software
 sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server emacs

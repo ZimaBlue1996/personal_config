@@ -6,7 +6,7 @@ mkdir dev
 cd -
 
 # yoga14s PC need install 
-# sudo apt install thunderbolt-tools
+# sudo apt install thunderbolt-tools mpv
 
 # essential software
 sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server emacs

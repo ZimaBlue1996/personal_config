@@ -5,7 +5,14 @@
 # sudo apt install thunderbolt-tools mpv fcitx5 fcitx5-chinese-addons
 
 # essential software
-sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server emacs
+sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server
+
+# wm
+sudo apt install -y bspwm sxhkd feh rofi polybar
+mkdir -p ~/.config/bspwm
+mkdir -p ~/.config/sxhkd
+cp ./bspwmrc  ~/.config/bspwm
+cp ./sxhkd    ~/.config/sxhkd
 
 # openssh-server and config 
 if [ ! -e  /etc/ssh/sshd_config.bak ] ; then

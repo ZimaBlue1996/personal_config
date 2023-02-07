@@ -7,6 +7,8 @@
 # essential software
 sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server
 
+# media
+sudo apt install -y obs-studio openshot
 # wm
 sudo apt install -y bspwm sxhkd feh rofi polybar
 mkdir -p ~/.config/bspwm

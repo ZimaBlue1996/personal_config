@@ -28,7 +28,7 @@ sudo systemctl enable ssh.service
 
 # ftp service and set anonymous_enable=YES
 if [ ! -e  /etc/init.d/vsftpd.conf.bak ] ; then
-    sudo cp /etc/init.d/vsftpd.conf   /etc/init.d/vsftpd.conf.bakCROSS_COMPILE
+    sudo cp /etc/init.d/vsftpd.conf   /etc/init.d/vsftpd.conf.bak
     echo "backup file: /etc/init.d/vsftpd.conf"
 fi
 sudo cp -f ./vsftpd.conf   /etc/init.d/vsftpd.conf
@@ -258,13 +258,13 @@ EOF
 # sudo apt install netplan.io
 
 
-sudo apt install -y nfs-kernel-server
-# append below text to /etc/exports
-cat << EOF >> /etc/exports 
-/home/$USER/dev/nfs *(rw,sync,no_root_squash,no_subtree_check)
-EOF
-sudo /etc/init.d/rpcbind restart
-sudo /etc/init.d/nfs-kernel-server restart
+# sudo apt install -y nfs-kernel-server
+# # append below text to /etc/exports
+# cat << EOF >> /etc/exports 
+# /home/$USER/dev/nfs *(rw,sync,no_root_squash,no_subtree_check)
+# EOF
+# sudo /etc/init.d/rpcbind restart
+# sudo /etc/init.d/nfs-kernel-server restart
 
 ## 1. rebuildding kernel for nfs 4
 # cd linux kernel dir

@@ -5,35 +5,35 @@
 # sudo apt install thunderbolt-tools mpv fcitx5 fcitx5-chinese-addons
 
 # essential software
-sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server
+# sudo apt install -y emacs vim build-essential git wget gcc gdb g++ htop minicom vsftpd openssh-server
 
 # media
-sudo apt install -y obs-studio openshot
-# wm
-sudo apt install -y bspwm sxhkd feh rofi polybar
-mkdir -p ~/.config/bspwm
-mkdir -p ~/.config/sxhkd
-cp ./bspwmrc  ~/.config/bspwm
-cp ./sxhkd    ~/.config/sxhkd
+# sudo apt install -y obs-studio openshot
+# # wm
+# sudo apt install -y bspwm sxhkd feh rofi polybar
+# mkdir -p ~/.config/bspwm
+# mkdir -p ~/.config/sxhkd
+# cp ./bspwmrc  ~/.config/bspwm
+# cp ./sxhkd    ~/.config/sxhkd
 
 # openssh-server and config 
-if [ ! -e  /etc/ssh/sshd_config.bak ] ; then
-    sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-    echo "backup file: /etc/ssh/sshd_config"
-fi
-sudo cp -f ./sshd_config     /etc/ssh/sshd_config
-sudo /etc/init.d/ssh start
-sudo systemctl enable ssh.service
+# if [ ! -e  /etc/ssh/sshd_config.bak ] ; then
+#     sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+#     echo "backup file: /etc/ssh/sshd_config"
+# fi
+# sudo cp -f ./sshd_config     /etc/ssh/sshd_config
+# sudo /etc/init.d/ssh start
+# sudo systemctl enable ssh.service
 
 
 # ftp service and set anonymous_enable=YES
-if [ ! -e  /etc/init.d/vsftpd.conf.bak ] ; then
-    sudo cp /etc/init.d/vsftpd.conf   /etc/init.d/vsftpd.conf.bak
-    echo "backup file: /etc/init.d/vsftpd.conf"
-fi
-sudo cp -f ./vsftpd.conf   /etc/init.d/vsftpd.conf
-sudo /etc/init.d/vsftpd restart
-sudo systemctl enable vsftpd.service
+# if [ ! -e  /etc/init.d/vsftpd.conf.bak ] ; then
+#     sudo cp /etc/init.d/vsftpd.conf   /etc/init.d/vsftpd.conf.bak
+#     echo "backup file: /etc/init.d/vsftpd.conf"
+# fi
+# sudo cp -f ./vsftpd.conf   /etc/init.d/vsftpd.conf
+# sudo /etc/init.d/vsftpd restart
+# sudo systemctl enable vsftpd.service
 
 # kernel build need
 # sudo apt install -y gcc g++ cpp m4 cmake make nasm bison flex autoconf automake autotools-dev   
@@ -43,13 +43,13 @@ sudo systemctl enable vsftpd.service
 # sudo apt install -y libmpc-dev libncurses5-dev libelf-dev libgmp3-dev u-boot-tools libssl-dev
 
 ## tftp server config
-sudo apt-get install -y tftp-hpa tftpd-hpa xinetd uml-utilities bridge-utils pxelinux user-mode-linux
-sudo cat << EOF > /etc/default/tftpd-hpa
-TFTP_USERNAME="tftp"
-TFTP_DIRECTORY="/home/$USER/dev/tftp" #该路径即为tftp可以访问到的路径
-TFTP_ADDRESS="0.0.0.0:69"
-TFTP_OPTIONS="-l -c -s"
-EOF
+# sudo apt-get install -y tftp-hpa tftpd-hpa xinetd uml-utilities bridge-utils pxelinux user-mode-linux
+# sudo cat << EOF > /etc/default/tftpd-hpa
+# TFTP_USERNAME="tftp"
+# TFTP_DIRECTORY="/home/$USER/dev/tftp" #该路径即为tftp可以访问到的路径
+# TFTP_ADDRESS="0.0.0.0:69"
+# TFTP_OPTIONS="-l -c -s"
+# EOF
 
 
 

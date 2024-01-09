@@ -1,0 +1,19 @@
+## windows 下 markdown 生成 pdf
+
+有若干种方案，
+
+1. prince 有水印
+2. 使用 markdown-pdf 插件导出或使用 chrome 导出 pdf 没有目录。
+3. 选择使用 pandoc，导出 tex，然后使用 tex 导出 pdf。功能强大但是较为复杂。
+
+首先安装 texlive.iso 文件，以及安装 pandoc 软件。
+然后使用合适的 latex 模板，修改中文字体。然后调用参数进行编译。
+
+```bat
+@echo off
+set filename=%1
+set pdffilename=%~n1.pdf
+rem 调用Pandoc程序并传递文件名参数
+pandoc  -f markdown+tex_math_single_backslash --toc --number-sections --pdf-engine=xelatex --template=pm-template.tex %filename% -o %pdffilename% 
+```
+
